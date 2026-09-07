@@ -1,0 +1,9 @@
+{
+  "appId": "space.adawati.app",
+  "appName": "Adawati",
+  "webDir": "www",
+  "server": {
+    "url": "https://adawati.space",
+    "cleartext": false
+  }
+}

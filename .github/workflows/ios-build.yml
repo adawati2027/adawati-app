@@ -1,0 +1,54 @@
+name: iOS Build (Capacitor)
+
+# Runs on GitHub's hosted macOS runners — free on public repos. No physical
+# or rented Mac needed for this. This workflow currently builds an UNSIGNED
+# simulator build to verify the Capacitor iOS project compiles correctly.
+#
+# It does NOT produce an App Store-ready .ipa yet — that requires an Apple
+# Developer Program membership ($99/yr) plus a signing certificate and
+# provisioning profile stored as GitHub Actions secrets. Once that account
+# exists, extend the "Build" step below to an `xcodebuild archive` +
+# `xcodebuild -exportArchive` pair (or adopt Fastlane), signed with those
+# secrets, and add a TestFlight upload step via `xcrun altool` or
+# `App Store Connect API` keys — also stored as secrets, never committed.
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  build-ios-simulator:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Sync Capacitor iOS project
+        run: npx cap sync ios
+
+      - name: Install CocoaPods dependencies
+        working-directory: ios/App
+        run: pod install
+
+      - name: Build for iOS Simulator (unsigned, compile check only)
+        working-directory: ios/App
+        run: |
+          xcodebuild -workspace App.xcworkspace \
+            -scheme App \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            build \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build result
+        run: echo "Build succeeded — the Capacitor iOS project compiles cleanly on a real macOS + Xcode environment."

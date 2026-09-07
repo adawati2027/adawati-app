@@ -1,0 +1,23 @@
+# CRITICAL: never commit the signing keystore or its password
+adawati-release.keystore
+RELEASE_KEYSTORE_PASSWORDS_DO_NOT_LOSE.txt
+*.keystore
+*.jks
+
+# Local SDK download (huge, machine-specific, not source)
+android-sdk/
+
+# local.properties contains the keystore path + password on this machine
+android/local.properties
+
+# Standard Node / build noise
+node_modules/
+android/app/build/
+android/build/
+android/.gradle/
+android/captures/
+android/local.properties
+ios/App/Pods/
+ios/App/build/
+.DS_Store
+*.log
