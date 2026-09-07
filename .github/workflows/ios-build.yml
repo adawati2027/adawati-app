@@ -35,14 +35,15 @@ jobs:
       - name: Sync Capacitor iOS project
         run: npx cap sync ios
 
-      - name: Install CocoaPods dependencies
-        working-directory: ios/App
-        run: pod install
-
+      # This Capacitor version manages iOS dependencies via Swift Package
+      # Manager (see ios/App/CapApp-SPM), not CocoaPods — there's no Podfile,
+      # so no separate pod install step, and no .xcworkspace (SPM integrates
+      # directly into the .xcodeproj). xcodebuild resolves SPM packages
+      # automatically as part of the build.
       - name: Build for iOS Simulator (unsigned, compile check only)
         working-directory: ios/App
         run: |
-          xcodebuild -workspace App.xcworkspace \
+          xcodebuild -project App.xcodeproj \
             -scheme App \
             -sdk iphonesimulator \
             -configuration Debug \
