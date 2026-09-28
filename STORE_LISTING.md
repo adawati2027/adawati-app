@@ -125,6 +125,8 @@ Feature graphic: 1024×500px banner — not yet created, needs a design pass sep
 
 ## Not yet ready (needs your action, not mine)
 
-- Google Play Console developer account ($25 one-time) — needs your own payment method, I cannot create this for you.
-- Actual screenshots — needs the app running on a device/emulator (tomorrow).
+- ~~Google Play Console developer account ($25 one-time)~~ — **done 2026-09-29.** Personal account "Ahmed Amawi" created, $25 paid, Android-device-access check passed. Identity verification submitted, pending Google's review (their UI says "may take a few days" — email notification when it clears). Contact-phone verification is blocked on identity approval. "Create app" stays disabled until both clear.
+- Actual screenshots — device is available now (Samsung A73 tested successfully), just need to capture them once "Create app" unlocks.
 - Feature graphic (1024×500 banner) — a design task, can prepare once you confirm you want one.
+
+Once the identity-verification email arrives: create the app in Play Console, upload `android/app/build/outputs/bundle/release/app-release.aab` (already built and signed), paste in this file's descriptions, fill the Data Safety form from the table above, and submit for review.
