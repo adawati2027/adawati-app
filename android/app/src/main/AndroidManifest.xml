@@ -31,6 +31,11 @@
             </intent-filter>
         </activity>
 
+        <!-- AdMob: required app ID, see https://developers.google.com/admob/android/quick-start -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3337905412116301~3719204335" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
