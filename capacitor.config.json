@@ -5,5 +5,15 @@
   "server": {
     "url": "https://adawati.space",
     "cleartext": false
+  },
+  "experimental": {
+    "ios": {
+      "spm": {
+        "swiftToolsVersion": "6.1",
+        "packageTraits": {
+          "@capacitor-firebase/authentication": ["Google"]
+        }
+      }
+    }
   }
 }
