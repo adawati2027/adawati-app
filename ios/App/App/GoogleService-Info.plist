@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>360902823980-bva55c14en46qg8ir303if1su5d91ndr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.360902823980-bva55c14en46qg8ir303if1su5d91ndr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>360902823980-7daoq22utgs1mc77ev65rm782vfjs179.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD3OXQhsJBy3u3euib_itgaH8pQwO8sdVY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>360902823980</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>space.adawati.app</string>
+	<key>PROJECT_ID</key>
+	<string>adawati-challenges</string>
+	<key>STORAGE_BUCKET</key>
+	<string>adawati-challenges.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:360902823980:ios:5b3757ea3865deb915c189</string>
+</dict>
+</plist>
